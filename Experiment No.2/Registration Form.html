@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body
+        {
+            background-color:lightslategray;
+        }
+        h1
+        {
+         color: black;
+        }
+        label
+        {
+          color: red; 
+          font-style: normal;
+        }
+        div
+        {
+            background-color: white;
+            max-width: 300px;
+            padding: 20px;
+            margin: 10%;
+            box-shadow: red;
+            
+        }
+        button
+        {
+            color: blue;
+            
+        
+        }
+    
+    </style>
+</head>
+<body>
+    <center>
+        <div>
+    <h1>Login Here</h1>
+        <br>
+        <br>
+    <label><b>Username :</b></label>
+    <input type="text" placeholder="username" value="onkar">
+    <br>
+    <br>
+    <br>
+    <label><b>Password :</b></label>
+    <input type="password" placeholder="Password" value="123@abc">
+    <div>
+        <button onclick="submit()" ><b>Submit</b></button> &nbsp; &nbsp; &nbsp;<button><b>Cancel</b></button>
+    </center>
+    <script>
+        function submit()
+        {
+            window.location.href="http://127.0.0.1:5500/Registerform.html";
+        }
+    </script>
+</body>
+</html>

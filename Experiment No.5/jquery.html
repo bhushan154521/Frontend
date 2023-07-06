@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Password Strength Checker</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body
+    {
+        background-color: black;
+        color: blue;
+    }
+    h1
+    {
+        background-color: yellow;
+        max-width: fit-content;
+        max-height: fit-content;
+
+    }
+    #body
+    {
+        background-color: aqua;
+        padding: 50px;
+        max-width: fit-content;
+        max-width: fit-content;
+    }
+    #password-strength
+     {
+      width: 200px;
+      height: 20px;
+      background-color: grey;
+      margin-top: 10px;
+    }
+
+    #password-strength span {
+      display: block;
+      height: 100%;
+    }
+
+    .weak {
+      background-color: red;
+    }
+
+    .medium {
+      background-color: orange;
+    }
+
+    .strong {
+      background-color: green;
+    }
+
+    button
+    {
+        background-color:lawngreen;
+    }
+  </style>
+</head>
+<body>
+    <br>
+    <br>
+    <br>
+    <center>
+  <h1>Password Strength Checker</h1>
+  <br>
+  <br>
+  <div id="body">
+  <label for="username"><b>Username :</b></label>
+  <input type="text" name="username"/>
+  <br>
+  <br>
+  <label for="password"><b>Password :</b></label>
+  <input type="password" id="password" name="password" />
+        <div id="password-strength">
+    <span></span>
+  </div>
+  </div>
+<script>
+    $(document).ready(function() {
+      $('#password').keyup(function() {
+        var password = $(this).val();
+        var strength = checkPasswordStrength(password);
+
+        $('#password-strength span').removeClass().addClass(strength);
+      });
+
+      function checkPasswordStrength(password) {
+        var strength = 0;
+
+        if (password.match(/[a-z]+/)) {
+          strength += 1;
+        }
+
+        if (password.match(/[A-Z]+/)) {
+          strength += 1;
+        }
+
+        if (password.match(/[0-9]+/)) {
+          strength += 1;
+        }
+
+        if (password.match(/[!@#$%^&*()]+/)) {
+          strength += 1;
+        }
+
+        if (password.length >= 8) {
+          strength += 1;
+        }
+
+        if (strength < 3) {
+          return 'weak';
+        } else if (strength < 5) {
+          return 'medium';
+        } else {
+          return 'strong';
+        }
+      }
+    });
+  </script>
+  <br>
+  <br>
+  <button>Submit</button> &nbsp; &nbsp; <button>Cancel</button>
+  </center>
+</body>
+</html>
